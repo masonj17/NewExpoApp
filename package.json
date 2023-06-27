@@ -1,0 +1,45 @@
+{
+  "name": "date-night",
+  "version": "1.0.0",
+  "main": "node_modules/expo/AppEntry.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "eject": "expo eject",
+    "lint": "eslint --ext .jsx --ext .jsx ./src",
+    "lint:fix": "eslint --fix --ext .jsx --ext .jsx ./src",
+    "format": "prettier --check ./src",
+    "write": "prettier --write ./src",
+    "prepare": "husky install",
+    "test": "echo hello world you need to add test here like jest"
+  },
+  "dependencies": {
+    "expo": "~48.0.18",
+    "expo-status-bar": "~1.4.4",
+    "react": "18.2.0",
+    "react-native": "0.71.8"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.0",
+    "eslint": "^8.43.0",
+    "eslint-plugin": "^1.0.1",
+    "eslint-plugin-react": "^7.32.2",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.2.2",
+    "prettier": "^2.8.8"
+  },
+  "private": true,
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --config .prettierrc --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}
